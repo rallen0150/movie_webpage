@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models import Avg
 
 # Create your models here.
 class Rater(models.Model):
@@ -6,6 +7,12 @@ class Rater(models.Model):
     gender = models.CharField(max_length=1)
     occupation = models.CharField(max_length=30)
     zipcode = models.CharField(max_length=10)
+
+    def avg_age(self):
+        return Rater.objects.aggregate(Avg('age'))
+
+    def avg_user_rating(self):
+        return Rating.objects.filter(user = self.id).aggregate(Avg('rating')).get('rating__av')
 
 
 class Movie(models.Model):
@@ -35,6 +42,9 @@ class Movie(models.Model):
 
     def __str__(self):
         return self.title
+
+    def avg_rating(self):
+        return Rating.objects.filter(movie = self.id).aggregate(Avg('rating')).get('rating__avg')
 
 class Rating(models.Model):
     user = models.ForeignKey(Rater)

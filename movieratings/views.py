@@ -31,6 +31,13 @@ def movie_view(request):
     }
     return render(request, "movies.html", context)
 
+def film_info(request, movie_id):
+    context ={
+        "movie": Movie.objects.get(id=movie_id),
+        "info": Rating.objects.filter(movie=movie_id)
+    }
+    return render(request, "film.html", context)
+
 def user_view(request):
     context = {
         "all_users": Rater.objects.all()
@@ -41,6 +48,5 @@ def rater_info(request, rater_id):
     context ={
         "info": Rater.objects.get(id=rater_id),
         "movies": Rating.objects.filter(user=rater_id)
-
     }
     return render(request, "rater.html", context)

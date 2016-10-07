@@ -9,7 +9,8 @@
     <a href="/">Back</a>
     <h2>{% for row in all_movies %}</h2>
       <p>
-        <a href="movies">{{ row }}</a> , {{ row.movie_average }}
+        <a href="/film/{{ row.id }}">{{ row }}</a>
+        <!-- {{ row.movie_average }} -->
       </p>
         {% endfor %}
   </body>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Movie Info</title>
+  </head>
+  <body>
+      <a href="/movies/">Back</a>
+      <h2>{{ movie.title }}</h2>
+
+      <h3>Average Rating</h3>
+        {{ movie.movie_average }}
+
+      <h3>User ID -> Rating</h3>
+      {% for row in info %}
+        <p>
+          {{ row.user.id }} -> {{ row.rating }}
+        </p>
+      {% endfor %}
+  </body>
+</html>

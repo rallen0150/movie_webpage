@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>All Movies</title>
+  </head>
+  <body>
+    <h1>All Movies In The Database!!!!</h1>
+    <h2>{% for row in all_movies %}</h2>
+      <p>
+        <a href="movies">{{ row }}</a>
+      </p>
+        {% endfor %}
+  </body>
+</html>

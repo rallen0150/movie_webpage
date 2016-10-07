@@ -16,6 +16,10 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
+from movieratings.views import index_view, movie_view
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^$', index_view),
+    url(r'^index/$', movie_view)
 ]

@@ -47,11 +47,10 @@ class Movie(models.Model):
     def avg_rating(self):
         return Rating.objects.filter(movie = self.id).aggregate(Avg('rating')).get('rating__avg')
 
-    def ordered_movie(self):
-        for row in Movie.objects.all():
-            x = Rating.objects.filter(movie = self.id).aggregate(Avg('rating')).get('rating__avg')
-            new_movie = x
-        return new_movie.order_by('new_movie')
+    # def ordered_movie(self):
+    #     # new_list = []
+    #     for row in Movie.objects.all().iterator():
+    #         print(Rating.objects.all().filter(movie = self.id).aggregate(Avg('rating')).get('rating__avg'))
 
 class Rating(models.Model):
     user = models.ForeignKey(Rater)

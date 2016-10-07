@@ -14,7 +14,7 @@
       <h3>User ID -> Rating</h3>
       {% for row in info %}
         <p>
-          {{ row.user.id }} -> {{ row.rating }}
+          <a href="/rater/{{ row.user.id }}">{{ row.user.id }}</a> -> {{ row.rating }}
         </p>
       {% endfor %}
   </body>

@@ -23,7 +23,7 @@
       <h3>Movie Title -> Rating</h3>
       {% for row in movies %}
         <p>
-          {{ row.movie.title }} -> {{ row.rating }}
+          <a href="/film/{{ row.movie.id }}">{{ row.movie.title }}</a> -> {{ row.rating }}
         </p>
       {% endfor %}
   </body>

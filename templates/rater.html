@@ -5,10 +5,20 @@
     <title>User Info</title>
   </head>
   <body>
-    <h1>Average Rating</h1>
-    <h1>{{ info.user_average }}</h1>
+    <a href="/users/">Back</a>
+    <h1>User Id</h1>
+      <h2>{{ info.id }}</h2>
+    <h3>Average Rating</h3>
+        {{ info.user_average }}
+
       <h3>Age</h3>
         {{ info.age }}
+
+      <h3>Occuption</h3>
+        {{ info.occupation }}
+
+      <h3>Zipcode</h3>
+        {{ info.zipcode }}
 
       <h3>Movie Title -> Rating</h3>
       {% for row in movies %}

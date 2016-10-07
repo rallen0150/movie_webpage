@@ -6,9 +6,10 @@
   </head>
   <body>
     <h1>All Movies In The Database!!!!</h1>
+    <a href="/">Back</a>
     <h2>{% for row in all_movies %}</h2>
       <p>
-        <a href="movies">{{ row }}</a>
+        <a href="movies">{{ row }}</a> , {{ row.movie_average }}
       </p>
         {% endfor %}
   </body>

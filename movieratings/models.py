@@ -8,11 +8,16 @@ class Rater(models.Model):
     occupation = models.CharField(max_length=30)
     zipcode = models.CharField(max_length=10)
 
-    def avg_age(self):
-        return Rater.objects.aggregate(Avg('age')).get('age__avg')
+    def __str__(self):
+        return self.id
+
 
     def avg_user_rating(self):
         return Rating.objects.filter(user = self.id).aggregate(Avg('rating')).get('rating__avg')
+
+    @property
+    def user_average(self):
+        return Rating.objects.filter(user=self).aggregate(Avg('rating')).get('rating__avg')
 
 
 
@@ -47,10 +52,10 @@ class Movie(models.Model):
     def avg_rating(self):
         return Rating.objects.filter(movie = self.id).aggregate(Avg('rating')).get('rating__avg')
 
-    # def ordered_movie(self):
-    #     # new_list = []
-    #     for row in Movie.objects.all().iterator():
-    #         print(Rating.objects.all().filter(movie = self.id).aggregate(Avg('rating')).get('rating__avg'))
+    @property
+    def movie_average(self):
+        return Rating.objects.filter(movie=self).aggregate(Avg('rating')).get('rating__avg')
+
 
 class Rating(models.Model):
     user = models.ForeignKey(Rater)

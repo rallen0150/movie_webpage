@@ -6,8 +6,6 @@ from django.db.models import Avg
 
 # Create your views here.
 
-
-
 def index_view(request):
     context = {
         "title": "Movie Data!",
@@ -15,19 +13,14 @@ def index_view(request):
     return render(request, "index.html", context)
 
 def top_20_view(request):
-
-
     context = {
-        "title": "Top 20 Movies Rated By Users",
-        # "top_20": movie_list
+        "top_20": Movie.objects.annotate(top_rating=Avg('rating__rating')).order_by('-top_rating')[:20]
     }
     return render(request, "top_20_movies.html", context)
 
 def movie_view(request):
-
     context = {
         "all_movies": Movie.objects.all(),
-
     }
     return render(request, "movies.html", context)
 

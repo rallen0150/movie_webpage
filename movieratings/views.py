@@ -40,6 +40,6 @@ def user_view(request):
 def rater_info(request, rater_id):
     context ={
         "info": Rater.objects.get(id=rater_id),
-        "movies": Rating.objects.filter(user=rater_id)
+        "rater_info": Rating.objects.filter(user=rater_id)
     }
     return render(request, "rater.html", context)

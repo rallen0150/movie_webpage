@@ -3,13 +3,56 @@
   <head>
     <meta charset="utf-8">
     <title>Top 20 Movies</title>
+
+    <style type="text/css">
+      body {
+        background: #c8c6c6
+      }
+
+      h1{
+        font-family: cursive;
+        font-size: 36px;
+        color: #90172a;
+        position: relative;
+        left: 375px;
+        text-decoration: underline;
+      }
+
+      a:link{
+        color: blue;
+      }
+
+      a:visited{
+        color: #4b0082;
+      }
+
+      a:hover{
+        background-color: #FFFFFF;
+        color: #000000;
+        padding: 2px;
+      }
+
+      h2 {
+        margin-left: 22em;
+        text-decoration: underline;
+      }
+
+      h4 {
+        margin-top: 3em;
+        margin-bottom: 3em;
+        margin-left: 28em;
+        margin-right: 33em;
+      }
+
+    </style>
   </head>
   <body>
     <h1>Top 20 Movies Rated By Users!</h1>
-    <a href="/">Back</a>
-    <h2>{% for row in top_20 %}</h2>
+    <a href="/">Back to Homepage</a>
+    <h2>Top 20</h2>
+    {% for row in top_20 %}
     <p>
-      <a href="/film/{{ row.id }}">{{ row.title }}</a>, {{ row.movie_average }}
+      <h4><a href="/film/{{ row.id }}">{{ row.title }}</a>, {{ row.movie_average }}</h4>
     </p>
         {% endfor %}
 

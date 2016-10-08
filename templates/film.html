@@ -3,16 +3,64 @@
   <head>
     <meta charset="utf-8">
     <title>Movie Info</title>
+
+    <style type="text/css">
+    body {
+      background: #c8c6c6
+    }
+
+    a:link{
+      color: blue;
+    }
+
+    a:visited{
+      color: #4b0082;
+    }
+
+    a:hover{
+      background-color: #FFFFFF;
+      color: #000000;
+      padding: 2px;
+    }
+
+    p {
+      margin-top: 1em;
+      margin-bottom: 1em;
+    }
+
+    h2 {
+      text-decoration: underline;
+      margin-left: 20em;
+    }
+
+    h3 {
+      text-decoration: underline;
+    }
+
+    h4 {
+      margin-left: 35em;
+      text-decoration: underline;
+    }
+
+    h5 {
+      margin-left: 42em;
+    }
+
+    </style>
+
   </head>
   <body>
-      <a href="/movies/">Back to Movie Database</a>
+    <a href="/">Back to Homepage</a>
+      <p>
+        <a href="/movies/">Back to Movie Database</a>
+      </p>
       <p>
         <a href="/top_20_movies/">Top 20</a>
       </p>
       <h2>{{ movie.title }}</h2>
 
-      <h3>Average Rating</h3>
-        {{ movie.movie_average }}
+      <h4>Average Rating</h4>
+        <h5>{{ movie.movie_average }}</h5>
 
       <h3>User ID, Rating</h3>
       {% for row in info %}

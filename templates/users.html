@@ -3,13 +3,48 @@
   <head>
     <meta charset="utf-8">
     <title>Users</title>
+
+    <style type="text/css">
+    body {
+      background: #c8c6c6
+    }
+
+    h1 {
+      font-family: cursive;
+      font-size: 36px;
+      color: #90172a;
+      position: relative;
+      left: 375px;
+      text-decoration: underline;
+    }
+
+    a:link{
+      color: blue;
+    }
+
+    a:visited{
+      color: #4b0082;
+    }
+
+    a:hover{
+      background-color: #FFFFFF;
+      color: #000000;
+      padding: 2px;
+    }
+
+    h4 {
+      margin-left: 21em;
+      font-size: 28px;
+    }
+    </style>
+
   </head>
   <body>
     <h1>All Users by ID Number</h1>
     <a href="/">Back to Homepage</a>
     <h2>{% for row in all_users %}</h2>
       <p>
-        <a href="/rater/{{ row.id }}">{{ row.id }}</a>
+        <h4><a href="/rater/{{ row.id }}">{{ row.id }}</a></h4>
       </p>
         {% endfor %}
 

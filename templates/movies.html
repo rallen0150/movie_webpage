@@ -3,13 +3,55 @@
   <head>
     <meta charset="utf-8">
     <title>All Movies</title>
+
+    <style type="text/css">
+    body {
+      background: #c8c6c6
+    }
+
+    h1 {
+      font-family: cursive;
+      font-size: 36px;
+      color: #90172a;
+      position: relative;
+      left: 375px;
+      text-decoration: underline;
+    }
+
+    a:link{
+      color: blue;
+    }
+
+    a:visited{
+      color: #4b0082;
+    }
+
+    a:hover{
+      background-color: #FFFFFF;
+      color: #000000;
+      padding: 2px;
+    }
+
+    p {
+      margin-top: 2em;
+      margin-bottom: 2em;
+    }
+
+    h4 {
+      margin-left: 28em;
+      margin-right: 30em;
+      font-size: 18px;
+    }
+
+    </style>
+
   </head>
   <body>
     <h1>All Movies In The Database!!!!</h1>
     <a href="/">Back to Homepage</a>
     <h2>{% for row in all_movies %}</h2>
       <p>
-        <a href="/film/{{ row.id }}">{{ row }}</a>
+        <h4><a href="/film/{{ row.id }}">{{ row }}</a></h4>
         <!-- {{ row.movie_average }} -->
       </p>
         {% endfor %}

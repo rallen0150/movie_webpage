@@ -3,22 +3,73 @@
   <head>
     <meta charset="utf-8">
     <title>User Info</title>
+
+    <style type="text/css">
+    body {
+      background: #c8c6c6
+    }
+
+    a:link{
+      color: blue;
+    }
+
+    a:visited{
+      color: #4b0082;
+    }
+
+    a:hover{
+      background-color: #FFFFFF;
+      color: #000000;
+      padding: 2px;
+    }
+
+    p {
+      margin-top: 1em;
+      margin-bottom: 1em;
+    }
+
+    h1 {
+      margin-left: 17.3em;
+      text-decoration: underline;
+    }
+
+    h2 {
+      margin-left: 25em;
+    }
+
+    h4 {
+      margin-left: 33em;
+      text-decoration: underline;
+    }
+
+    h5 {
+      margin-left: 42em;
+      margin-right: 30em;
+      margin-bottom: 2em;
+    }
+
+    </style>
+
   </head>
   <body>
-    <a href="/users/">Back to Users</a>
+    <a href="/">Back to Homepage</a>
+    <p>
+      <a href="/users/">Back to Users</a>
+    </p>
+
     <h1>User Id</h1>
       <h2>{{ info.id }}</h2>
-    <h3>Average Rating</h3>
-        {{ info.user_average }}
+    <h4>Average Rating</h4>
+        <h5>{{ info.user_average }}</h5>
 
-      <h3>Age</h3>
-        {{ info.age }}
+      <h4>Age</h4>
+        <h5>{{ info.age }}</h5>
 
-      <h3>Occuption</h3>
-        {{ info.occupation }}
+      <h4>Occuption</h4>
+        <h5>{{ info.occupation }}</h5>
 
-      <h3>Zipcode</h3>
-        {{ info.zipcode }}
+      <h4>Zipcode</h4>
+        <h5>{{ info.zipcode }}</h5>
 
       <h3>Movie Title, Rating</h3>
       {% for row in movies %}

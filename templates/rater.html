@@ -5,7 +5,7 @@
     <title>User Info</title>
   </head>
   <body>
-    <a href="/users/">Back</a>
+    <a href="/users/">Back to Users</a>
     <h1>User Id</h1>
       <h2>{{ info.id }}</h2>
     <h3>Average Rating</h3>
@@ -20,10 +20,10 @@
       <h3>Zipcode</h3>
         {{ info.zipcode }}
 
-      <h3>Movie Title -> Rating</h3>
+      <h3>Movie Title, Rating</h3>
       {% for row in movies %}
         <p>
-          <a href="/film/{{ row.movie.id }}">{{ row.movie.title }}</a> -> {{ row.rating }}
+          <a href="/film/{{ row.movie.id }}">{{ row.movie.title }}</a>, {{ row.rating }}
         </p>
       {% endfor %}
   </body>

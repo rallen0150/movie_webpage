@@ -5,16 +5,19 @@
     <title>Movie Info</title>
   </head>
   <body>
-      <a href="/movies/">Back</a>
+      <a href="/movies/">Back to Movie Database</a>
+      <p>
+        <a href="/top_20_movies/">Top 20</a>
+      </p>
       <h2>{{ movie.title }}</h2>
 
       <h3>Average Rating</h3>
         {{ movie.movie_average }}
 
-      <h3>User ID -> Rating</h3>
+      <h3>User ID, Rating</h3>
       {% for row in info %}
         <p>
-          <a href="/rater/{{ row.user.id }}">{{ row.user.id }}</a> -> {{ row.rating }}
+          <a href="/rater/{{ row.user.id }}">{{ row.user.id }}</a>, {{ row.rating }}
         </p>
       {% endfor %}
   </body>

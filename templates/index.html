@@ -3,10 +3,56 @@
   <head>
     <meta charset="utf-8">
     <title>Movie Data</title>
+  <style type="text/css">
+      body {
+            background-color: #C8C6C6;
+           }
+
+      h1 {
+        font-family: 'Comic Sans MS', Arial, Sans-serif;
+        color: #90172a;
+        position: relative;
+        left: 450px;
+        font-size: 50px;
+        text-decoration: underline;
+
+      }
+      blockquote{
+        float: right;
+        width: 150px;
+        font-size: 20px;
+        font-style: italic;
+        font-family: 'Monotype Corsiva', Sans-serif;
+        margin: auto;
+        padding: 15px;
+        border: 5px double #000000;
+      }
+    a {
+      font-family: sans-serif;
+      color: #000080;
+      font-size: 20px;
+      padding: 15px;
+      margin: 50px;
+    }
+
+    a:hover{
+      background-color: #FFFFFF;
+      color: #000000;
+      padding: 10px;
+    }
+
+    p{
+      margin-top: 2em;
+      margin-bottom: 2em;
+    }
+  </style>
+
   </head>
   <body>
     <h1>{{ title }}</h1>
-
+      <blockquote cite="http://flavorwire.com/465863/25-delightful-roger-ebert-quotes-about-movies">
+        "No good movie is too long and no bad movie is too short." -Roger Ebert
+      </blockquote>
       <a href="/top_20_movies/"> Top 20 Movies</a>
       <p>
         <a href="movies/">Every Movie in The Database</a>

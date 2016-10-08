@@ -14,7 +14,7 @@ def index_view(request):
 
 def top_20_view(request):
     context = {
-        "top_20": Movie.objects.annotate(top_rating=Avg('rating__rating')).order_by('-top_rating')[:20]
+        "top_20": Movie.objects.annotate(top_rating=Avg('rating__rating')).order_by('-top_rating')[:20],
     }
     return render(request, "top_20_movies.html", context)
 

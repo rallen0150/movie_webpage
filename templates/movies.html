@@ -43,17 +43,52 @@
       font-size: 18px;
     }
 
+    h5 {
+      float: left;
+    }
+
+    img:nth-of-type(1) {
+      height: 250px;
+      width: 200px;
+      float: right;
+    }
+
+    img:nth-of-type(2) {
+      height: 275px;
+      width: 225px;
+      float: left;
+      margin-top: 3250em;
+    }
+
+    img:nth-of-type(3) {
+      height: 250px;
+      width: 200px;
+      float: right;
+      margin-top: 5550em;
+    }
+
+
     </style>
 
   </head>
   <body>
+    <h2 id="top"></h2>
     <h1>All Movies In The Database!!!!</h1>
-    <a href="/">Back to Homepage</a>
+    <h5><a href="/">Back to Homepage</a></h5>
+
+    <img src="http://fontmeme.com/images/The-Godfather-Poster.jpg" />
+
+    <img src="https://s-media-cache-ak0.pinimg.com/originals/79/c9/7b/79c97beaaf53b87c9bb12f834bdb9a03.jpg" />
+
+    <img src="http://vignette2.wikia.nocookie.net/jurassicpark/images/c/ce/JP-MoviePoster.jpg/revision/latest?cb=20141015011537" />
+
     <h2>{% for row in all_movies %}</h2>
       <p>
         <h4><a href="/film/{{ row.id }}">{{ row }}</a></h4>
         <!-- {{ row.movie_average }} -->
       </p>
         {% endfor %}
+
+      <a href="#top">Back to Top</a>
   </body>
 </html>

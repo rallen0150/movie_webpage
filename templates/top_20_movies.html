@@ -5,6 +5,7 @@
     <title>Top 20 Movies</title>
 
     <style type="text/css">
+
       body {
         background: #c8c6c6
       }
@@ -41,23 +42,25 @@
         margin-top: 3em;
         margin-bottom: 3em;
         margin-left: 28em;
-        margin-right: 33em;
+        /*margin-right: 33em;*/
+        position: relative;
       }
 
       img {
         margin-top: 2em;
+        margin-left: 2em;
         position: fixed;
+        height: 250px;
+        width: 250px;
       }
 
     </style>
+
   </head>
   <body>
     <h1>Top 20 Movies Rated By Users!</h1>
     <a href="/">Back to Homepage</a> <br> <br>
-    <figure>
-      <img src="/Users/RobbieAllen/tiy-projects/movie_webpage/movie_webpage/images/top20.jpg" alt="Top 20"/>
-      
-    </figure>
+    <img src="http://blogs.vmware.com/kb/files/2015/12/top20.jpg" alt="Top 20"/>
 
     <h2>Top 20, Rating</h2>
     {% for row in top_20 %}

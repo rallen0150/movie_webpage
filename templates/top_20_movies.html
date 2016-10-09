@@ -44,17 +44,22 @@
         margin-right: 33em;
       }
 
+      img {
+        position: fixed;
+      }
+
     </style>
   </head>
   <body>
     <h1>Top 20 Movies Rated By Users!</h1>
-    <a href="/">Back to Homepage</a>
+    <a href="/">Back to Homepage</a> <br> <br>
+    <img src="/images/top20.jpg" alt="Top 20" />
     <h2>Top 20</h2>
     {% for row in top_20 %}
     <p>
       <h4><a href="/film/{{ row.id }}">{{ row.title }}</a>, {{ row.movie_average }}</h4>
     </p>
         {% endfor %}
-      <img src="images/top20.jpg" alt="Top 20" />
+
   </body>
 </html>

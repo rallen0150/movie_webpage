@@ -36,12 +36,24 @@
       margin-left: 21em;
       font-size: 28px;
     }
+
+    iframe {
+      float: right;
+    }
+
+    h5 {
+      float: right;
+    }
+
     </style>
 
   </head>
   <body>
     <h1>All Users by ID Number</h1>
     <a href="/">Back to Homepage</a>
+
+    <iframe src="//giphy.com/embed/l0Hlvwab19vuth4Sk?html5=true" width="400" height="300" class="giphy-embed" position=fixed
+            ></iframe><p><a href="https://giphy.com/gifs/Originals-bored-watching-popcorn-l0Hlvwab19vuth4Sk"><h5>via GIPHY</h5></a></p>
     <h2>{% for row in all_users %}</h2>
       <p>
         <h4><a href="/rater/{{ row.id }}">{{ row.id }}</a></h4>

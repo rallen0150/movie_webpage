@@ -33,7 +33,7 @@
       }
 
       h2 {
-        margin-left: 22em;
+        margin-left: 21em;
         text-decoration: underline;
       }
 
@@ -45,6 +45,7 @@
       }
 
       img {
+        margin-top: 2em;
         position: fixed;
       }
 
@@ -53,8 +54,12 @@
   <body>
     <h1>Top 20 Movies Rated By Users!</h1>
     <a href="/">Back to Homepage</a> <br> <br>
-    <img src="/images/top20.jpg" alt="Top 20" />
-    <h2>Top 20</h2>
+    <figure>
+      <img src="/Users/RobbieAllen/tiy-projects/movie_webpage/movie_webpage/images/top20.jpg" alt="Top 20"/>
+      
+    </figure>
+
+    <h2>Top 20, Rating</h2>
     {% for row in top_20 %}
     <p>
       <h4><a href="/film/{{ row.id }}">{{ row.title }}</a>, {{ row.movie_average }}</h4>
